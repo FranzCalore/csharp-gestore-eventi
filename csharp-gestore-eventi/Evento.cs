@@ -13,17 +13,11 @@ namespace csharp_gestore_eventi
         private uint capienzaMassima;
         private uint numeroPostiPrenotati;
 
-        public Evento (string titolo, DateTime data, uint capienzaMassima)
+        public Evento (string titolo, string dataStringa, uint capienzaMassima)
         {
-            this.titolo = titolo;
+            SetTitolo(titolo);
 
-            if (data >= DateTime.Now)
-            {
-                this.data = data;
-            } else
-            {
-                throw new Exception();
-            }
+            SetData(dataStringa);
             
             this.capienzaMassima = capienzaMassima;
             this.numeroPostiPrenotati = 0;
@@ -64,7 +58,7 @@ namespace csharp_gestore_eventi
         public void SetData(string stringdata)
         {
             DateTime datainserita = DateTime.Parse(stringdata);
-            if (datainserita >= DateTime.Now)
+            if (datainserita > DateTime.Now)
             {
                 this.data = datainserita;
             }
