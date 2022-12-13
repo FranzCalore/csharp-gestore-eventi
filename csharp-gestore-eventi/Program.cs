@@ -34,7 +34,7 @@ while (nuovoProgrammaEventi.NumeroEventi() != numeroEventiDaProgrammare)
     }
     catch (FormatException e)
     {
-        Console.WriteLine("La data inserita è in formato errato");
+        Console.WriteLine("L'input inserito è in formato errato");
     }
     catch (OverflowException e)
     {
@@ -45,7 +45,7 @@ while (nuovoProgrammaEventi.NumeroEventi() != numeroEventiDaProgrammare)
         Console.WriteLine(e.Message);
     }
 }
-Conferenza conferenzaDiProva = new Conferenza("Bryan Lucchetta", "CsharpShop - la vendetta", "14/12/2022", 26, 15.60);
+Conferenza conferenzaDiProva = new Conferenza("Bryan Lucchetta", "CsharpShop 4 - la vendetta", "14/12/2022", 26, 15.60);
 nuovoProgrammaEventi.AggiungiEvento(conferenzaDiProva);
 Console.WriteLine("Gli eventi programmati sono: " + nuovoProgrammaEventi.NumeroEventi());
 Console.WriteLine("Gli eventi programmati sono: " + nuovoProgrammaEventi.ToString());
