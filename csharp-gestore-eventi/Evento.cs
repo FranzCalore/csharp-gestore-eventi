@@ -58,7 +58,7 @@ namespace csharp_gestore_eventi
         public void SetData(string stringdata)
         {
             DateTime datainserita = DateTime.Parse(stringdata);
-            if (datainserita > DateTime.Now)
+            if (datainserita > DateTime.Today)
             {
                 this.data = datainserita;
             }
@@ -71,7 +71,7 @@ namespace csharp_gestore_eventi
         public void PrenotaPosti(uint numeroPosti)
         {
             uint numeroPostiDisponibili = this.capienzaMassima-this.numeroPostiPrenotati;
-            if (numeroPostiDisponibili==0 || DateTime.Now > this.GetData() || numeroPosti > numeroPostiDisponibili)
+            if (numeroPostiDisponibili==0 || DateTime.Today > this.GetData() || numeroPosti > numeroPostiDisponibili)
             {
                 throw new Exception("Non è possibile prenotare posti per questo evento");
             } else
@@ -81,7 +81,7 @@ namespace csharp_gestore_eventi
         }
         public void DisdiciPosti(uint numeroPosti)
         {
-            if (this.numeroPostiPrenotati==0 || DateTime.Now > this.GetData())
+            if (this.numeroPostiPrenotati==0 || DateTime.Today > this.GetData())
             {
                 throw new Exception("Non è possibile disdire posti per questo evento");
             }

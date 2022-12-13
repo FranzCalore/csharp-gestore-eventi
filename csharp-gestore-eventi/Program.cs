@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using csharp_gestore_eventi;
+using System.Text;
+Console.OutputEncoding = Encoding.Default;
 
 
 
@@ -43,6 +45,8 @@ while (nuovoProgrammaEventi.NumeroEventi() != numeroEventiDaProgrammare)
         Console.WriteLine(e.Message);
     }
 }
+Conferenza conferenzaDiProva = new Conferenza("Bryan Lucchetta", "CsharpShop - la vendetta", "14/12/2022", 26, 15.60);
+nuovoProgrammaEventi.AggiungiEvento(conferenzaDiProva);
 Console.WriteLine("Gli eventi programmati sono: " + nuovoProgrammaEventi.NumeroEventi());
 Console.WriteLine("Gli eventi programmati sono: " + nuovoProgrammaEventi.ToString());
 Console.WriteLine("Inserisci una data di cui vuoi visualizzare gli eventi (dd/mm/yyyy):");
